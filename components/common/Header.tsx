@@ -27,8 +27,8 @@ const Header = () => {
         <HeaderLogo />
 
         {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-24">
-          <HeaderMenu type="dekstop" />
+        <div className="hidden md:flex items-center gap-4">
+          <HeaderMenu type="desktop" />
           <HeaderCaller />
         </div>
 
