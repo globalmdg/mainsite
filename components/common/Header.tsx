@@ -24,21 +24,23 @@ const Header = () => {
   }, [])
 
 
-  const baseClasses = "fixed top-0 w-[1100px] z-50 transition-all duration-300"
+  const baseClasses = "fixed top-0 w-full z-50 transition-all duration-300 flex "
   const scrolledClasses = "bg-white/80 backdrop-blur-md shadow-md py-2"
   const defaultClasses = "bg-transparent py-6"
 
 
   return (
-    <header className={`${baseClasses} ${scrolled ? scrolledClasses : defaultClasses} flex justify-between`}>
-      <div className="flex items-center">
-        <HeaderLogo />
-      </div>
-      <div className="mt-3">
-        <HeaderMenu />
-      </div>
-      <div>
-        <HeaderCaller />
+    <header className={`${baseClasses} ${scrolled ? scrolledClasses : defaultClasses} w-full flex justify-center`} >
+      <div className={`flex justify-between w-[1150px]`}>
+        <div className="flex items-center">
+          <HeaderLogo />
+        </div>
+        <div className="mt-3">
+          <HeaderMenu />
+        </div>
+        <div>
+          <HeaderCaller />
+        </div>
       </div>
     </header>
   )
