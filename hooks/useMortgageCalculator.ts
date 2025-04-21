@@ -1,5 +1,7 @@
 // hooks/useMortgageCalculator.ts
 
+import { MonthlyBreakdown } from "@/types/data";
+
 type MortgageParams = {
   price: number;
   downPayment: number;
@@ -7,12 +9,7 @@ type MortgageParams = {
   term: number; // en años
 };
 
-type MonthlyBreakdown = {
-  month: number;
-  principal: number;
-  interest: number;
-  remainingBalance: number;
-};
+
 
 export function useMortgageCalculator({
   price,
@@ -47,6 +44,7 @@ export function useMortgageCalculator({
       principal: parseFloat(principal.toFixed(2)),
       interest: parseFloat(interest.toFixed(2)),
       remainingBalance: parseFloat(balance.toFixed(2)),
+      remainingPrincipal: parseFloat(balance.toFixed(2)),
     });
   }
 

@@ -6,7 +6,14 @@ export type BreakdownEntry = {
 };
 
 export type TimelineVisualizerProps = {
-  breakdown: BreakdownEntry[];
+  breakdown: MonthlyBreakdown[];
 };
 
 
+export type MonthlyBreakdown = {
+  month: number;
+  principal: number;
+  interest: number;
+  remainingBalance: number;
+  remainingPrincipal: number;
+};
