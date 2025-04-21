@@ -3,7 +3,7 @@ import CTAButton from "../common/CTAButton"
 const HeaderCaller = () => {
   return (
     <div>
-        <CTAButton text="Más Información" />
+      <CTAButton text="Calculadora de hipotecas" link="/calculadora" />
     </div>
   )
 }

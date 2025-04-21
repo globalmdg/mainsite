@@ -45,7 +45,6 @@ const Header = () => {
         <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md z-40">
           <div className="p-4 border-t border-gray-200">
             <HeaderMenu type="mobile" />
-            {/* Optionally include <HeaderCaller /> here too */}
           </div>
         </div>
       )}

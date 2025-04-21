@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Building, Home, DollarSign } from "lucide-react";
+import HeaderCaller from "../header/HeaderCaller";
 
 
 const Hero = () => {
@@ -8,11 +9,15 @@ const Hero = () => {
     <section className="bg-white mt-24">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side: Text */}
+
         <div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tighter tracking-tight">
             Gestionamos tu Hipoteca para que<br />
             vivas <span className="text-blue-600">sin preocupaciones</span>
           </h1>
+          <div className="mb-8 sm:hidden">
+            <HeaderCaller />
+          </div>
           <p className="text-gray-600 mb-8">
             Ahorra tiempo, dinero y estrés con nuestro servicio integral de gestión hipotecaria. Te acompañamos en el proceso y ponemos a tu disposición un equipo de expertos para que consigas la mejor hipoteca para tu nuevo hogar.
           </p>
@@ -24,6 +29,7 @@ const Hero = () => {
             >
               Empieza Ahora
             </a>
+
             <a
               href="#"
               className="inline-flex items-center justify-center px-6 py-3 text-blue-600 hover:text-blue-800 rounded-lg text-sm font-medium transition"
@@ -62,6 +68,7 @@ const Hero = () => {
           />
         </div>
       </div>
+
     </section>
   )
 }
