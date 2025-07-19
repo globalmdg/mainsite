@@ -1,6 +1,8 @@
 "use client";
 // components/ContactForm.jsx
 import React, { useState } from 'react';
+import { FaTiktok } from "react-icons/fa";
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,45 +11,45 @@ const ContactForm = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<string|null>(null);
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
-interface FormData {
+  interface FormData {
     name: string;
     email: string;
     message: string;
-}
+  }
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev: FormData) => ({
-        ...prev,
-        [name]: value
+      ...prev,
+      [name]: value
     }));
-}
+  }
 
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitStatus('success');
-        
-        // Reset form after submission
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
-        
-        // Clear success message after 3 seconds
-        setTimeout(() => {
-            setSubmitStatus(null);
-        }, 3000);
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+
+      // Reset form after submission
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+
+      // Clear success message after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 3000);
     }, 1500);
-};
+  };
 
   return (
     <section id="contacto" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100">
@@ -57,7 +59,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
           <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">Estamos aquí para resolver tus dudas y ayudarte a encontrar la mejor solución inmobiliaria para ti.</p>
         </div>
-        
+
         <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="lg:w-2/3 w-full">
@@ -76,7 +78,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
                     required
                   />
                 </div>
-                
+
                 <div className="mb-6">
                   <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Correo Electrónico</label>
                   <input
@@ -90,7 +92,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
                     required
                   />
                 </div>
-                
+
                 <div className="mb-6">
                   <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Mensaje</label>
                   <textarea
@@ -104,17 +106,16 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
                     required
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full py-3 px-6 rounded-lg text-white font-medium transition-all duration-300 ${
-                    isSubmitting ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg'
-                  }`}
+                  className={`w-full py-3 px-6 rounded-lg text-white font-medium transition-all duration-300 ${isSubmitting ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 hover:shadow-lg'
+                    }`}
                 >
                   {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
                 </button>
-                
+
                 {submitStatus === 'success' && (
                   <div className="mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-center">
                     ¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.
@@ -123,14 +124,14 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
               </form>
             </div>
           </div>
-          
+
           {/* Contact Information */}
           <div className="lg:w-1/3 w-full">
             <div className="bg-blue-700 text-white rounded-xl shadow-xl p-8 h-full">
               <h3 className="text-2xl font-bold mb-6">Información de Contacto</h3>
-              
+
               <div className="space-y-6">
-                <div className="flex items-start">
+                {/* <div className="flex items-start">
                   <div className="bg-blue-600 p-3 rounded-lg mr-4">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -141,8 +142,8 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
                     <h4 className="font-semibold text-lg">Dirección</h4>
                     <p className="text-blue-100 mt-1">Calle Principal 123, Piso 4<br />Ciudad, CP 28001</p>
                   </div>
-                </div>
-                
+                </div> */}
+
                 <div className="flex items-start">
                   <div className="bg-blue-600 p-3 rounded-lg mr-4">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -154,7 +155,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
                     <p className="text-blue-100 mt-1">info@tuhipoteca.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="bg-blue-600 p-3 rounded-lg mr-4">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -166,14 +167,12 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
                     <p className="text-blue-100 mt-1">+34 912 345 678</p>
                   </div>
                 </div>
-                
+
                 <div className="pt-6 mt-6 border-t border-blue-600">
                   <h4 className="font-semibold text-lg mb-4">Síguenos</h4>
                   <div className="flex space-x-4">
                     <a href="#" className="bg-blue-600 hover:bg-blue-500 transition-colors p-3 rounded-full">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
-                      </svg>
+                      <FaTiktok />
                     </a>
                     <a href="#" className="bg-blue-600 hover:bg-blue-500 transition-colors p-3 rounded-full">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
