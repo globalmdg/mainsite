@@ -671,7 +671,7 @@ export default function MortgageForm() {
     const emailBodyHtml = emailBody.replace(/\n/g, '<br>')
 
     const formDataEmail = {
-      to: 'sergiomadrigal@gmail.com',
+      to: 'hipotecastoptendencia@gmail.com',
       subject: 'Nuevo formulario de hipotecas',
       html: emailBodyHtml
     }
